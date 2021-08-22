@@ -1,13 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #222831;
+
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.heading {
+  text-align: center;
+}
+.heading h1 {
+  color: white;
+  margin: 100px 0 15px 0;
+  letter-spacing: 5px;
+}
+.heading .underline {
+  margin: 0 auto;
+  width: 150px;
+  height: 5px;
+  background-color: cyan;
+}
+.content {
+  width: 50vw;
+  margin: 75px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+.content .container {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+.content .container .review{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all .3s linear;
+}
+.content .container .activeSlide {
+  opacity: 1;
+  transform: translateX(0);
+}
+.content .container .lastSlide {
+  transform: translateX(-100%);
+}
+.content .container .nextSlide {
+  transform: translateX(100%);
+}
+.content .container .img-container {
+  margin: 0 auto;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+}
+.content .container .img-container img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.content .container .info{
+  margin: 25px 0 30px 0;
+}
+.content .container .info h4{
+  color: cyan;
+  letter-spacing: 2.5px;
+  font-style: italic;
+}
+.content .container .info p{
+  margin-top: 5px;
+  color: rgb(255, 255, 255);
+}
+.content .container .des{
+  width: 85%;
+  margin: 0 auto;
+}
+.content .container .des span{
+  color: rgb(190, 190, 190);
+}
+.content .container .icon{
+  margin: 30px 0 0 0;
+  color: cyan;
+  font-size: 2rem;
+}
+
+.nav .icon{
+  width: 50px;
+  height: 50px;
+  color: cyan;
+  cursor: pointer;  
+  transition: all .5s;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  user-select: none;
+}
+.nav .icon:hover{
+  color: rgb(255, 255, 255);
+}
+@media(max-width:1399px){
+  .content {
+    width: 75vw;
+  }
+}
+@media(max-width:767px){
+  .content {
+    width: 90vw;
+  }
+}
+@media(max-width:575px){
+  .content {
+    width: 97vw;
+  }
+  .content .container .des{
+    width: 100%;
+  }
 }
